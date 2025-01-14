@@ -1,0 +1,22 @@
+<section>
+  <span>
+    Todo Add
+  </span>
+  <input type="text" [(ngModel)]="inputValue" (keyup.enter)="onSubmit()"/>
+</section>
+<section>
+  <span>
+    Todo List
+  </span>
+  <aside>
+    <ul>
+      <li *ngFor="let item of todoList; let i = index">
+        <span>{{i+1}}</span>
+        <span>{{item?.value}}</span>
+        <span>
+          <button (click)="deleteData(item)">delete</button>
+        </span>
+      </li>
+    </ul>
+  </aside>
+</section>
